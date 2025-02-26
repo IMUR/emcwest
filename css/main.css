@@ -204,6 +204,8 @@ a {
   max-width: 100%;
   object-fit: contain;
   transition: all var(--transition-medium);
+  display: block;
+  margin: 0 auto;
 }
 
 .scrolled .logo-container {
@@ -712,14 +714,21 @@ footer:before {
     padding: 1rem 0;
   }
   
+  .top-header .container {
+    padding: 0 10px;
+    justify-content: space-between;
+  }
+  
   .logo-container {
     width: auto;
-    min-width: 40px;
+    max-width: 120px;
     height: 40px;
     max-height: 40px;
     display: flex;
     align-items: center;
     justify-content: flex-start;
+    overflow: visible;
+    margin-right: 10px;
   }
   
   .logo-viewer {
@@ -778,6 +787,16 @@ footer:before {
 @media (max-width: 480px) {
   :root {
     --base-font-size: 14px;
+  }
+  
+  .logo-container {
+    max-width: 100px;
+    height: 35px;
+    margin-right: 5px;
+  }
+  
+  .logo-viewer {
+    object-position: left center;
   }
   
   .hero-content {
