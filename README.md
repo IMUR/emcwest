@@ -143,6 +143,13 @@ Update the Vimeo ID in `reel.html`:
 - **Deploy**: 5% complete
 - **Production**: 0% complete
 
+### GitHub Pages Deployment
+
+This project is deployed to GitHub Pages and can be viewed at:
+https://[username].github.io/emcwest/
+
+The deployment is automated via GitHub Actions whenever changes are pushed to the `buntest` branch.
+
 ### Deployment Checklist
 
 Before deploying to production, ensure the following tasks are completed:
