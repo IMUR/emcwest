@@ -191,7 +191,8 @@ a {
   position: relative;
   height: 50px;
   width: auto;
-  overflow: hidden;
+  max-width: 200px;
+  overflow: visible;
   display: flex;
   align-items: center;
   transition: all var(--transition-medium);
@@ -200,6 +201,7 @@ a {
 .logo-viewer {
   height: 100%;
   width: auto;
+  max-width: 100%;
   object-fit: contain;
   transition: all var(--transition-medium);
 }
@@ -711,8 +713,20 @@ footer:before {
   }
   
   .logo-container {
-    width: 80px;
+    width: auto;
+    min-width: 40px;
     height: 40px;
+    max-height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+  }
+  
+  .logo-viewer {
+    height: 100%;
+    width: auto;
+    max-width: 100%;
+    object-fit: contain;
   }
   
   .menu-toggle {
