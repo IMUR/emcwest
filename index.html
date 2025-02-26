@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EMC West | Creative Production</title>
+    <meta name="description" content="EMC West is a creative production company delivering impactful storytelling for entertainment marketing.">
+    
+    <!-- Favicon -->
+    <link rel="icon" href="assets/images/favicon.png" type="image/png">
+    
+    <!-- CSS Files -->
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    
+    <!-- Spline 3D Viewer -->
+    <script type="module" src="https://unpkg.com/@splinetool/viewer@1.9.37/build/spline-viewer.js"></script>
+</head>
+<body>
+    <header class="top-header">
+        <div class="container">
+            <a href="index.html" class="logo">
+                <div class="logo-container">
+                    <spline-viewer url="https://prod.spline.design/uVeibPvaqMhEuWXF/scene.splinecode" class="logo-viewer"></spline-viewer>
+                </div>
+            </a>
+            <div class="nav-container">
+                <nav class="main-nav">
+                    <a href="reel.html">REEL</a>
+                    <a href="work.html">WORK</a>
+                    <a href="about.html">ABOUT US</a>
+                    <a href="contact.html">CONTACT</a>
+                </nav>
+                <div class="menu-toggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+    </header>
+    
+    <div class="sub-header">
+        <div class="container">
+            <div class="sub-nav">HOME</div>
+        </div>
+    </div>
+    
+    <section class="hero-section">
+        <div class="spline-container">
+            <spline-viewer url="https://prod.spline.design/uVeibPvaqMhEuWXF/scene.splinecode"></spline-viewer>
+        </div>
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="hero-title">EMC West</h1>
+                <p class="hero-subtitle">Creative Production Excellence</p>
+                <a href="work.html" class="cta-button">Explore Our Work</a>
+            </div>
+        </div>
+    </section>
+    
+    <section class="featured-work-section" data-animate-group data-stagger-delay="150">
+        <div class="container">
+            <h2 class="section-title reveal-on-scroll">Featured Projects</h2>
+            
+            <div class="work-grid">
+                <!-- Featured Project 1 -->
+                <article class="work-item reveal-on-scroll" data-animate-item>
+                    <a href="#" class="work-link" data-vimeo-id="123456789" data-video-title="Project Title 1">
+                        <div class="work-thumbnail" style="background-image: url('assets/images/project1.jpg')">
+                            <div class="work-overlay">
+                                <h3 class="work-title">Inside Out 2</h3>
+                                <p class="work-category">Featurette</p>
+                            </div>
+                        </div>
+                    </a>
+                </article>
+                
+                <!-- Featured Project 2 -->
+                <article class="work-item reveal-on-scroll" data-animate-item>
+                    <a href="#" class="work-link" data-vimeo-id="123456790" data-video-title="Project Title 2">
+                        <div class="work-thumbnail" style="background-image: url('assets/images/project2.jpg')">
+                            <div class="work-overlay">
+                                <h3 class="work-title">Loki</h3>
+                                <p class="work-category">Behind The Scenes</p>
+                            </div>
+                        </div>
+                    </a>
+                </article>
+                
+                <!-- Featured Project 3 -->
+                <article class="work-item reveal-on-scroll" data-animate-item>
+                    <a href="#" class="work-link" data-vimeo-id="123456791" data-video-title="Project Title 3">
+                        <div class="work-thumbnail" style="background-image: url('assets/images/project3.jpg')">
+                            <div class="work-overlay">
+                                <h3 class="work-title">Kingdom of the Planet of the Apes</h3>
+                                <p class="work-category">Promotional</p>
+                            </div>
+                        </div>
+                    </a>
+                </article>
+            </div>
+            
+            <div class="text-center" style="margin-top: 3rem;">
+                <a href="work.html" class="cta-button reveal-on-scroll">View All Work</a>
+            </div>
+        </div>
+    </section>
+    
+    <section class="about-preview-section">
+        <div class="container">
+            <div class="about-preview-content reveal-on-scroll">
+                <h2 class="section-title">Who We Are</h2>
+                <p class="about-text">
+                    EMC West is a creative production company dedicated to crafting compelling narratives 
+                    that resonate with audiences. With decades of combined experience in film, television, 
+                    and digital media, our award-winning team collaborates with the industry's top 
+                    filmmakers and studios to deliver impactful content that elevates entertainment marketing.
+                </p>
+                <a href="about.html" class="cta-button">Meet Our Team</a>
+            </div>
+        </div>
+    </section>
+    
+    <footer>
+        <div class="container footer-container">
+            <nav class="footer-nav">
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="work.html">Work</a>
+                <a href="reel.html">Reel</a>
+                <a href="contact.html">Contact</a>
+            </nav>
+            
+            <div class="contact-info">
+                <p>818 846 4574</p>
+                <p>info@emcwest.com</p>
+                <p>505 S Victory Blvd, Burbank, CA</p>
+            </div>
+            
+            <div class="copyright-info">
+                <p>&copy; 2025 EMC West. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- JavaScript Files -->
+    <script src="js/main.js"></script>
+    <script src="js/animations.js"></script>
+    <script src="js/video-handler.js"></script>
+</body>
+</html>

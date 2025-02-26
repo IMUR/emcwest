@@ -58,3 +58,7 @@ wp-config.php
 cursor_key
 cursor_key.pub
 id_dsa.pub
+.gitignore
+SunnyBoy Entertainment_files/5fc7a936d9b12c49-min.en-US.css
+vscode-gitignore-extension/package.json
+SunnyBoy Entertainment.html

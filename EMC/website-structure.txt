@@ -1,0 +1,35 @@
+# EMC West Website Structure
+
+Here's the complete file structure for your website:
+
+```
+emcwest/
+├── index.html              # Homepage
+├── about.html              # Team/About page
+├── work.html               # Portfolio page
+├── reel.html               # Showreel page
+├── contact.html            # Contact page
+├── css/
+│   ├── main.css            # Main stylesheet
+│   ├── animations.css      # Animation styles
+│   └── responsive.css      # Responsive styles
+├── js/
+│   ├── main.js             # Main JavaScript file
+│   ├── animations.js       # Animation functionality
+│   └── video-handler.js    # Video integration (Vimeo)
+├── assets/
+│   ├── images/             # Image assets
+│   ├── fonts/              # Font files
+│   └── videos/             # Video files
+└── README.md               # Project documentation
+```
+
+## Implementation Steps
+
+1. Set up the repository structure
+2. Create HTML files for each page
+3. Set up CSS files
+4. Implement JavaScript functionality
+5. Test and deploy
+
+Let's proceed with implementation details for each file.
