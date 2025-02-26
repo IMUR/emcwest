@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>EMC West | Creative Production</title>
-    <meta name="description" content="EMC West is a creative production company delivering impactful storytelling for entertainment marketing.">
+    <meta name="description" content="EMC West is a creative production company delivering impactful storytelling for entertainment marketing through compelling visual content.">
     
     <!-- Favicon -->
     <link rel="icon" href="assets/images/favicon.png" type="image/png">
@@ -14,20 +14,147 @@
     <link rel="stylesheet" href="css/animations.css">
     <link rel="stylesheet" href="css/responsive.css">
     
-    <!-- Spline 3D Viewer -->
-    <script type="module" src="https://unpkg.com/@splinetool/viewer@1.9.37/build/spline-viewer.js"></script>
+    <!-- Additional styles specific to the reel page -->
+    <style>
+        .reel-section {
+            padding: 3rem 0 5rem;
+        }
+        
+        .reel-container {
+            position: relative;
+            width: 100%;
+            margin: 2rem auto;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.5);
+            border-radius: 12px;
+            overflow: hidden;
+            background-color: #000;
+            transition: all 0.5s ease;
+        }
+        
+        .reel-container:hover {
+            transform: scale(1.01);
+        }
+        
+        .reel-container.playing {
+            box-shadow: 0 20px 50px rgba(123, 97, 255, 0.3);
+        }
+        
+        .video-responsive {
+            position: relative;
+            padding-bottom: 56.25%; /* 16:9 aspect ratio */
+            height: 0;
+            overflow: hidden;
+        }
+        
+        .video-responsive iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+        
+        .reel-controls {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(15, 15, 30, 0.7);
+            z-index: 10;
+            transition: opacity 0.5s ease;
+        }
+        
+        .reel-play-button {
+            background: var(--highlight);
+            color: white;
+            border: none;
+            border-radius: 50px;
+            padding: 1rem 2.5rem;
+            font-size: 1.2rem;
+            font-weight: 500;
+            letter-spacing: 1px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+        }
+        
+        .reel-play-button:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 25px rgba(123, 97, 255, 0.6);
+        }
+        
+        .reel-play-button:active {
+            transform: scale(0.98);
+        }
+        
+        .reel-details {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem 0;
+        }
+        
+        .featured-projects {
+            margin-top: 5rem;
+        }
+        
+        .featured-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .featured-item {
+            border-radius: 8px;
+            overflow: hidden;
+            background: var(--card-bg);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            transition: all 0.3s ease;
+        }
+        
+        .featured-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+        }
+        
+        .featured-thumb {
+            height: 180px;
+            background-size: cover;
+            background-position: center;
+        }
+        
+        .featured-info {
+            padding: 1.25rem;
+        }
+        
+        .featured-title {
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .featured-desc {
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.7);
+            line-height: 1.5;
+        }
+    </style>
 </head>
 <body>
     <header class="top-header">
         <div class="container">
             <a href="index.html" class="logo">
                 <div class="logo-container">
-                    <spline-viewer url="https://prod.spline.design/uVeibPvaqMhEuWXF/scene.splinecode" class="logo-viewer"></spline-viewer>
+                    <img src="assets/images/logo_emc_color.svg" alt="EMC West Logo" class="logo-viewer">
                 </div>
             </a>
             <div class="nav-container">
                 <nav class="main-nav">
-                    <a href="reel.html">REEL</a>
+                    <a href="index.html">HOME</a>
                     <a href="work.html">WORK</a>
                     <a href="about.html">ABOUT US</a>
                     <a href="contact.html">CONTACT</a>
@@ -47,78 +174,85 @@
         </div>
     </div>
     
-    <section class="hero-section">
-        <div class="spline-container">
-            <spline-viewer url="https://prod.spline.design/uVeibPvaqMhEuWXF/scene.splinecode"></spline-viewer>
-        </div>
+    <section class="reel-section">
         <div class="container">
-            <div class="hero-content">
-                <h1 class="hero-title">EMC West</h1>
-                <p class="hero-subtitle">Creative Production Excellence</p>
-                <a href="work.html" class="cta-button">Explore Our Work</a>
+            <h2 class="section-title reveal-on-scroll">EMC West Showcase</h2>
+            
+            <div class="reel-container reveal-on-scroll">
+                <div class="reel-controls">
+                    <button class="reel-play-button">Play Reel</button>
+                </div>
+                <div class="video-responsive">
+                    <!-- Replace with your actual Vimeo showreel ID -->
+                    <iframe src="https://player.vimeo.com/video/123456789?title=0&byline=0&portrait=0" width="640" height="360" frameborder="0" allow="autoplay; fullscreen" allowfullscreen data-custom-controls></iframe>
+                </div>
+            </div>
+            
+            <div class="reel-details reveal-on-scroll">
+                <p>
+                    Welcome to EMC West, a creative production company dedicated to crafting compelling narratives 
+                    that resonate with audiences. Our showcase reel highlights our diverse work produced for the entertainment 
+                    industry's leading studios and filmmakers. From compelling featurettes and behind-the-scenes content to promotional 
+                    campaigns and dynamic visual storytelling, this reel exemplifies our commitment to crafting engaging narratives 
+                    that captivate audiences and elevate entertainment marketing.
+                </p>
             </div>
         </div>
     </section>
     
-    <section class="featured-work-section" data-animate-group data-stagger-delay="150">
+    <section class="featured-projects">
         <div class="container">
             <h2 class="section-title reveal-on-scroll">Featured Projects</h2>
             
-            <div class="work-grid">
-                <!-- Featured Project 1 -->
-                <article class="work-item reveal-on-scroll" data-animate-item>
-                    <a href="#" class="work-link" data-vimeo-id="123456789" data-video-title="Project Title 1">
-                        <div class="work-thumbnail" style="background-image: url('assets/images/project1.jpg')">
-                            <div class="work-overlay">
-                                <h3 class="work-title">Inside Out 2</h3>
-                                <p class="work-category">Featurette</p>
-                            </div>
-                        </div>
-                    </a>
-                </article>
+            <div class="featured-grid">
+                <!-- Featured Item 1 -->
+                <div class="featured-item reveal-on-scroll">
+                    <div class="featured-thumb" style="background-image: url('assets/images/projects/inside-out-2.jpg')"></div>
+                    <div class="featured-info">
+                        <h3 class="featured-title">Inside Out 2</h3>
+                        <p class="featured-desc">Dive into the imaginative world of Riley's emotions in this behind-the-scenes featurette.</p>
+                    </div>
+                </div>
                 
-                <!-- Featured Project 2 -->
-                <article class="work-item reveal-on-scroll" data-animate-item>
-                    <a href="#" class="work-link" data-vimeo-id="123456790" data-video-title="Project Title 2">
-                        <div class="work-thumbnail" style="background-image: url('assets/images/project2.jpg')">
-                            <div class="work-overlay">
-                                <h3 class="work-title">Loki</h3>
-                                <p class="work-category">Behind The Scenes</p>
-                            </div>
-                        </div>
-                    </a>
-                </article>
+                <!-- Featured Item 2 -->
+                <div class="featured-item reveal-on-scroll">
+                    <div class="featured-thumb" style="background-image: url('assets/images/projects/planet-apes.jpg')"></div>
+                    <div class="featured-info">
+                        <h3 class="featured-title">Kingdom of the Planet of the Apes</h3>
+                        <p class="featured-desc">Explore the creation of the stunning visuals in this epic sci-fi adventure.</p>
+                    </div>
+                </div>
                 
-                <!-- Featured Project 3 -->
-                <article class="work-item reveal-on-scroll" data-animate-item>
-                    <a href="#" class="work-link" data-vimeo-id="123456791" data-video-title="Project Title 3">
-                        <div class="work-thumbnail" style="background-image: url('assets/images/project3.jpg')">
-                            <div class="work-overlay">
-                                <h3 class="work-title">Kingdom of the Planet of the Apes</h3>
-                                <p class="work-category">Promotional</p>
-                            </div>
-                        </div>
-                    </a>
-                </article>
-            </div>
-            
-            <div class="text-center" style="margin-top: 3rem;">
-                <a href="work.html" class="cta-button reveal-on-scroll">View All Work</a>
+                <!-- Featured Item 3 -->
+                <div class="featured-item reveal-on-scroll">
+                    <div class="featured-thumb" style="background-image: url('assets/images/projects/loki.jpg')"></div>
+                    <div class="featured-info">
+                        <h3 class="featured-title">Loki</h3>
+                        <p class="featured-desc">Uncover the secrets behind the Time Variance Authority in this exclusive behind-the-scenes look.</p>
+                    </div>
+                </div>
+                
+                <!-- Featured Item 4 -->
+                <div class="featured-item reveal-on-scroll">
+                    <div class="featured-thumb" style="background-image: url('assets/images/projects/muppets.jpg')"></div>
+                    <div class="featured-info">
+                        <h3 class="featured-title">The Muppets: Scratching the Surface</h3>
+                        <p class="featured-desc">Join us for an intimate look at the beloved characters that have entertained generations.</p>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
     
-    <section class="about-preview-section">
+    <section class="cta-section">
         <div class="container">
-            <div class="about-preview-content reveal-on-scroll">
-                <h2 class="section-title">Who We Are</h2>
-                <p class="about-text">
-                    EMC West is a creative production company dedicated to crafting compelling narratives 
-                    that resonate with audiences. With decades of combined experience in film, television, 
-                    and digital media, our award-winning team collaborates with the industry's top 
-                    filmmakers and studios to deliver impactful content that elevates entertainment marketing.
-                </p>
-                <a href="about.html" class="cta-button">Meet Our Team</a>
+            <div class="cta-content reveal-on-scroll">
+                <h2>Impressed by What You See?</h2>
+                <p>Explore our complete portfolio or contact us to discuss your project.</p>
+                <div class="cta-buttons">
+                    <a href="work.html" class="cta-button">View Portfolio</a>
+                    <a href="contact.html" class="cta-button" style="background-color: transparent; border: 2px solid var(--highlight); margin-left: 1rem;">Contact Us</a>
+                </div>
             </div>
         </div>
     </section>
@@ -129,7 +263,6 @@
                 <a href="index.html">Home</a>
                 <a href="about.html">About</a>
                 <a href="work.html">Work</a>
-                <a href="reel.html">Reel</a>
                 <a href="contact.html">Contact</a>
             </nav>
             
@@ -149,5 +282,47 @@
     <script src="js/main.js"></script>
     <script src="js/animations.js"></script>
     <script src="js/video-handler.js"></script>
+    
+    <!-- Reel Specific Script -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Manual initialization for reel player if not handled by video-handler.js
+            const reelContainer = document.querySelector('.reel-container');
+            const playButton = document.querySelector('.reel-play-button');
+            const iframe = document.querySelector('.video-responsive iframe');
+            
+            if (playButton && iframe) {
+                playButton.addEventListener('click', () => {
+                    // Create Vimeo player object
+                    const player = new Vimeo.Player(iframe);
+                    
+                    // Play the video
+                    player.play().then(() => {
+                        // Hide controls when video starts playing
+                        const controls = document.querySelector('.reel-controls');
+                        if (controls) {
+                            controls.style.opacity = '0';
+                            setTimeout(() => {
+                                controls.style.display = 'none';
+                            }, 500);
+                        }
+                        
+                        // Add playing class to container
+                        reelContainer.classList.add('playing');
+                    }).catch((error) => {
+                        console.error('Error playing the video:', error);
+                    });
+                });
+                
+                // Load Vimeo API if not already loaded
+                if (!window.Vimeo) {
+                    const script = document.createElement('script');
+                    script.src = 'https://player.vimeo.com/api/player.js';
+                    script.async = true;
+                    document.body.appendChild(script);
+                }
+            }
+        });
+    </script>
 </body>
 </html>

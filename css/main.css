@@ -69,7 +69,7 @@ body:before {
   left: 0;
   right: 0;
   bottom: 0;
-  background: url('assets/images/bg-texture.jpg') no-repeat center center;
+  background: url('../assets/images/bg-texture.jpg') no-repeat center center;
   background-size: cover;
   opacity: 0.04;
   z-index: -1;
@@ -91,6 +91,8 @@ body:after {
   pointer-events: none;
   z-index: 90;
   backdrop-filter: blur(8px);
+  -webkit-mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 0%, rgba(0,0,0,0.5) 50%, rgba(0,0,0,0) 100%);
+  mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 0%, rgba(0,0,0,0.5) 50%, rgba(0,0,0,0) 100%);
 }
 
 /* ===== LAYOUT ===== */
@@ -177,6 +179,7 @@ a {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  position: relative;
 }
 
 .nav-container {
@@ -186,21 +189,23 @@ a {
 
 .logo-container {
   position: relative;
-  width: 120px;
-  height: 60px;
+  height: 50px;
+  width: auto;
+  overflow: hidden;
   display: flex;
   align-items: center;
   transition: all var(--transition-medium);
 }
 
-.scrolled .logo-container {
-  width: 80px;
-  height: 40px;
+.logo-viewer {
+  height: 100%;
+  width: auto;
+  object-fit: contain;
+  transition: all var(--transition-medium);
 }
 
-.logo-viewer {
-  width: 100%;
-  height: 100%;
+.scrolled .logo-container {
+  height: 40px;
 }
 
 /* ===== NAVIGATION ===== */
@@ -359,6 +364,13 @@ body.scrolled .sub-header {
   opacity: 0.8;
   margin-bottom: 2rem;
   letter-spacing: 2px;
+}
+
+.hero-background {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 50%, var(--accent-color) 100%);
+  opacity: 0.8;
 }
 
 /* ===== BUTTONS ===== */
